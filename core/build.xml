@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="release">
+	<import file="../ant/common-targets.xml"/>
+
+	<property name="project" value="java2com"/>
+
+	<target depends="init.common" name="init">
+		<property name="jarfile" value="${project}.jar"/>
+		<property name="manifest" value="${manifest.dir}/manifest.mf"/>
+		<tstamp/>
+		<echo message="Build ${Name} ${project} Java-To-COM Bridge"/>
+	</target>
+	<path id="project.class.path">
+		<pathelement path="${build.dir}/"/>
+		<pathelement path="${java.class.path}/"/>
+	</path>
+
+	<target depends="init,clean" name="compile">
+		<javac debug="${debug}" deprecation="true" destdir="${build.dir}" srcdir="../util/src/java">
+            <include name="com/argus/util/DateUtils.java"/>
+		</javac>
+		<javac debug="${debug}" deprecation="true" destdir="${build.dir}" srcdir="src/java">
+            <include name="**/*.java"/>
+		</javac>
+	</target>
+
+    <target depends="init,compile" name="jar">
+        <jar basedir="${build.dir}" jarfile="${release.dir}/${jarfile}" manifest="${manifest}">
+            <include name="**/*"/>
+        </jar>
+		<signjar jar="${release.dir}/${jarfile}" keystore="${signjar.keystore}" alias="${signjar.alias}" storepass="${signjar.storepass}"/>
+        <delete dir="${build.dir}" includeemptydirs="true"/>       
+    </target>
+
+    <target depends="init,compile,jar" description="Build release zip file" name="release">
+        
+    	<!-- sign java2com.jar and java2com.dll (copy to release web dir) -->
+    	<echo message="${release.dir}/${jarfile}"/>
+        <copy toDir="${release.web.dir}/lib/java2com">
+            <fileset dir="${release.dir}">
+                <include name="${jarfile}"/>
+            </fileset>
+            <fileset dir="../jni-activex/java2com/Release">
+                <include name="java2com.dll"/>
+            </fileset>
+        </copy>
+    	<!-- jar and sign java2com.dll (copy to release web dir) -->
+        <jar basedir="../jni-activex/java2com/Release" jarfile="${release.web.dir}/lib/java2com/java2com.dll.jar" manifest="${manifest}">
+            <include name="java2com.dll"/>
+        </jar>
+		<signjar jar="${release.web.dir}/lib/java2com/java2com.dll.jar"
+			keystore="${signjar.keystore}" alias="${signjar.alias}" storepass="${signjar.storepass}"/>
+
+    	<!-- copy test cases (to release web dir) -->
+        <copy toDir="${release.web.dir}/java2com">
+            <fileset dir="../java2comUtils/src/java">
+                <include name="com/argus/activex/util/*.java"/>
+            </fileset>
+            <fileset dir="../java2comUtils/test/java">
+                <include name="*.java"/>
+                <exclude name="AllTests.java"/>
+            </fileset>
+        </copy>
+
+    	<!-- build zip file (to release web dir) -->
+        <zip filesonly="true" zipfile="${release.web.dir}/${project}.zip">
+            <fileset dir="${release.web.dir}/lib/java2com">
+	            <include name="java2com.jar"/>
+	            <include name="java2com.dll"/>
+            </fileset>
+            <fileset dir="../jni-activex/java2com/Release">
+                <include name="_copy2system32.bat"/>
+            </fileset>
+        </zip>
+
+    </target>
+    
+</project>

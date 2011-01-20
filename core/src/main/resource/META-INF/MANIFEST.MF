@@ -1,0 +1,9 @@
+Manifest-version: 1.1
+Seal: true
+Main-Class: 
+Specification-Title: Argus Software Java-To-COM Bridge
+Specification-Vendor: Argus Software Pty. Ltd.
+Specification-Version: 1.2
+Implementation-Title: com.argus.activex
+Implementation-Vendor: Argus Software
+Implementation-Version: 1.2.0

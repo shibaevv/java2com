@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.argus.java2com</groupId>
+    <artifactId>java2com</artifactId>
+    <packaging>pom</packaging>
+    <name>java2com</name>
+    <version>1.4.0</version>
+    <description>java2com</description>
+    <organization>
+        <name>ApolloSoft</name>
+    </organization>
+    <developers>
+        <developer>
+            <id>shibaevv</id>
+            <name>Valeri Chibaev</name>
+            <email>shibaevv at apollosoft.net</email>
+            <organization>ApolloSoft Pty Ltd</organization>
+            <roles>
+                <role>Solution Architect</role>
+                <role>Senior Java Developer</role>
+            </roles>
+            <timezone>+10</timezone>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>COMMERCIAL/PROPRIETARY. ALL RIGHTS RESERVED. DO NOT USE WITHOUT EXPRESS WRITTEN PERMISSION.</name>
+            <distribution>repository</distribution>
+        </license>
+    </licenses>
+    <modules>
+        <module>core</module>
+    </modules>
+    <properties>
+        <application.version>1.4.0</application.version>
+
+        <!-- commonly used library versions -->
+        <junit.version>3.8.2</junit.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <!-- Instructing the resources plugin to filter certain directories -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
