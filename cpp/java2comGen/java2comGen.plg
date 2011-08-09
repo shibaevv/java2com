@@ -1,0 +1,142 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: java2comGen - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Valera\LOCALS~1\Temp\RSP1F8.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "JAVA2COMGEN_EXPORTS" /FR"Debug/" /Fp"Debug/java2comGen.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\java2comGen.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\ARRAYDESC.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\ELEMDESC.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\FUNCDESC.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\IDLDESC.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\ITypeLib.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\PARAMDESC.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\PARAMDESCEX.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\SAFEARRAYBOUND.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\TLIBATTR.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\TypeAttr.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\TYPEDESC.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\TypeInfo.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\TypeLib.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\include\VARDESC.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\include\variant.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\utils\ubstr.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\utils\ustring.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\utils\JNI_UTILS.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\utils\jobject_auto.cpp"
+"C:\dev\jworkspace\jni-activex\java2com\utils\jobjectArray_auto.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Valera\LOCALS~1\Temp\RSP1F8.tmp" 
+Creating temporary file "C:\DOCUME~1\Valera\LOCALS~1\Temp\RSP1F9.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "JAVA2COMGEN_EXPORTS" /FR"Debug/" /Fp"Debug/java2comGen.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"C:\dev\jworkspace\jni-activex\java2com\java2comGen\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Valera\LOCALS~1\Temp\RSP1F9.tmp" 
+Creating temporary file "C:\DOCUME~1\Valera\LOCALS~1\Temp\RSP1FA.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:yes /pdb:"Debug/java2comGen.pdb" /debug /machine:I386 /out:"Release/java2comGen.dll" /implib:"Debug/java2comGen.lib" /pdbtype:sept 
+".\Debug\StdAfx.obj"
+".\Debug\java2comGen.obj"
+".\Debug\ARRAYDESC.obj"
+".\Debug\ELEMDESC.obj"
+".\Debug\FUNCDESC.obj"
+".\Debug\IDLDESC.obj"
+".\Debug\ITypeLib.obj"
+".\Debug\PARAMDESC.obj"
+".\Debug\PARAMDESCEX.obj"
+".\Debug\SAFEARRAYBOUND.obj"
+".\Debug\TLIBATTR.obj"
+".\Debug\TypeAttr.obj"
+".\Debug\TYPEDESC.obj"
+".\Debug\TypeInfo.obj"
+".\Debug\TypeLib.obj"
+".\Debug\VARDESC.obj"
+".\Debug\variant.obj"
+".\Debug\ubstr.obj"
+".\Debug\ustring.obj"
+".\Debug\JNI_UTILS.obj"
+".\Debug\jobject_auto.obj"
+".\Debug\jobjectArray_auto.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\Valera\LOCALS~1\Temp\RSP1FA.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(109) : error C2661: 'tagTLIBATTR::tagTLIBATTR' : no overloaded function takes 3 parameters
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(109) : error C2228: left of '.init' must have class/struct/union type
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : error C2039: 'ITypeLib' : is not a member of 'argus'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : error C2259: 'ITypeLib' : cannot instantiate abstract class due to following members:
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4463) : see declaration of 'ITypeLib'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'long __stdcall IUnknown::QueryInterface(const struct _GUID &,void ** )' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\unknwn.h(109) : see declaration of 'QueryInterface'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'unsigned long __stdcall IUnknown::AddRef(void)' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\unknwn.h(113) : see declaration of 'AddRef'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'unsigned long __stdcall IUnknown::Release(void)' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\unknwn.h(115) : see declaration of 'Release'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'unsigned int __stdcall ITypeLib::GetTypeInfoCount(void)' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4466) : see declaration of 'GetTypeInfoCount'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'long __stdcall ITypeLib::GetTypeInfo(unsigned int,struct ITypeInfo ** )' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4468) : see declaration of 'GetTypeInfo'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'long __stdcall ITypeLib::GetTypeInfoType(unsigned int,enum tagTYPEKIND *)' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4472) : see declaration of 'GetTypeInfoType'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'long __stdcall ITypeLib::GetTypeInfoOfGuid(const struct _GUID &,struct ITypeInfo ** )' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4476) : see declaration of 'GetTypeInfoOfGuid'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'long __stdcall ITypeLib::GetLibAttr(struct tagTLIBATTR ** )' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4480) : see declaration of 'GetLibAttr'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'long __stdcall ITypeLib::GetTypeComp(struct ITypeComp ** )' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4483) : see declaration of 'GetTypeComp'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'long __stdcall ITypeLib::GetDocumentation(int,unsigned short ** ,unsigned short ** ,unsigned long *,unsigned short ** )' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4486) : see declaration of 'GetDocumentation'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'long __stdcall ITypeLib::IsName(unsigned short *,unsigned long,int *)' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4493) : see declaration of 'IsName'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'long __stdcall ITypeLib::FindName(unsigned short *,unsigned long,struct ITypeInfo ** ,long *,unsigned short *)' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4498) : see declaration of 'FindName'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : warning C4259: 'void __stdcall ITypeLib::ReleaseTLibAttr(struct tagTLIBATTR *)' : pure virtual function was not defined
+        c:\program files\microsoft visual studio\vc98\include\oaidl.h(4505) : see declaration of 'ReleaseTLibAttr'
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typelib.cpp(140) : error C2228: left of '.init' must have class/struct/union type
+c:\dev\jworkspace\jni-activex\java2com\java2comgen\include\typeinfo.cpp(8) : fatal error C1083: Cannot open include file: 'jobject_auto.h': No such file or directory
+Error executing cl.exe.
+Creating temporary file "C:\DOCUME~1\Valera\LOCALS~1\Temp\RSP1FB.tmp" with contents
+[
+/nologo /o"Debug/java2comGen.bsc" 
+".\Debug\StdAfx.sbr"
+".\Debug\java2comGen.sbr"
+".\Debug\ARRAYDESC.sbr"
+".\Debug\ELEMDESC.sbr"
+".\Debug\FUNCDESC.sbr"
+".\Debug\IDLDESC.sbr"
+".\Debug\ITypeLib.sbr"
+".\Debug\PARAMDESC.sbr"
+".\Debug\PARAMDESCEX.sbr"
+".\Debug\SAFEARRAYBOUND.sbr"
+".\Debug\TLIBATTR.sbr"
+".\Debug\TypeAttr.sbr"
+".\Debug\TYPEDESC.sbr"
+".\Debug\TypeInfo.sbr"
+".\Debug\TypeLib.sbr"
+".\Debug\VARDESC.sbr"
+".\Debug\variant.sbr"
+".\Debug\ubstr.sbr"
+".\Debug\ustring.sbr"
+".\Debug\JNI_UTILS.sbr"
+".\Debug\jobject_auto.sbr"
+".\Debug\jobjectArray_auto.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\Valera\LOCALS~1\Temp\RSP1FB.tmp"
+Creating browse info file...
+BSCMAKE: error BK1506 : cannot open file '.\Debug\StdAfx.sbr': No such file or directory
+Error executing bscmake.exe.
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+java2comGen.dll - 7 error(s), 13 warning(s)
+</pre>
+</body>
+</html>
