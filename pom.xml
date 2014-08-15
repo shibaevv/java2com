@@ -9,14 +9,16 @@
     <name>java2com</name>
     <version>1.4.0</version>
     <description>java2com</description>
+
     <organization>
         <name>ApolloSoft</name>
     </organization>
+
     <developers>
         <developer>
             <id>shibaevv</id>
             <name>Valeri Chibaev</name>
-            <email>shibaevv at apollosoft.net</email>
+            <email>mail at apollosoft.net.au</email>
             <organization>ApolloSoft Pty Ltd</organization>
             <roles>
                 <role>Solution Architect</role>
@@ -25,21 +27,29 @@
             <timezone>+10</timezone>
         </developer>
     </developers>
+
     <licenses>
         <license>
             <name>COMMERCIAL/PROPRIETARY. ALL RIGHTS RESERVED. DO NOT USE WITHOUT EXPRESS WRITTEN PERMISSION.</name>
             <distribution>repository</distribution>
         </license>
     </licenses>
+
     <modules>
         <module>core</module>
     </modules>
+
     <properties>
         <application.version>1.4.0</application.version>
 
         <!-- commonly used library versions -->
         <junit.version>3.8.2</junit.version>
+
+        <jdk.version>1.6</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss</maven.build.timestamp.format>
     </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -50,6 +60,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <build>
         <!-- Instructing the resources plugin to filter certain directories -->
         <resources>
@@ -68,15 +79,31 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.3</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3</version>
                 <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!--version>2.3.2</version-->
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
                 </configuration>
             </plugin>
         </plugins>
